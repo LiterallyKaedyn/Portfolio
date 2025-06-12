@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'Lucon';
+    src: url('/assets/fonts/lucon.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #00FF00;
+    font-family: 'Lucon', monospace;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#topLeftButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 12px;
+    font-family: 'Poppins', sans-serif;
+    background: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+#console {
+    width: 90%;
+    max-width: 1000px;
+    height: 85%;
+    background: black;
+    font-size: 16px;
+    white-space: pre-wrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#loading {
+    font-family: 'Lucon', monospace;
+    font-size: 16px;
+    color: #00FF00;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: blink 1s step-start infinite;
+}
+
+#mainContent {
+    display: none;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#mainContent.show {
+    display: block;
+    opacity: 1;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1em;
+    background-color: #00FF00;
+    margin-left: 5px;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
